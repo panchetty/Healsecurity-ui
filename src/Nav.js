@@ -8,15 +8,16 @@ const items = [
     label: 'Home',
     key: 'mail',
     icon: <MailOutlined />,
+    
   },
   {
     label: 'Contact',
-    key: 'app',
+    key: 'contact',
     icon: <AppstoreOutlined />,
   },
   {
     label:'About',
-    key: 'app',
+    key: 'about',
     icon: <AppstoreOutlined />,
   },
  
@@ -28,6 +29,12 @@ const App = () => {
     console.log('click ', e);
     setCurrent(e.key);
   };
-  return <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />;
+  return(
+    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}>
+    <Menu.Item>Home page</Menu.Item>
+    <Menu.Item>Contact page</Menu.Item>
+    <Menu.Item>About page</Menu.Item>
+    </Menu>
+  )
 };
 export default App;
